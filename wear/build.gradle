@@ -11,14 +11,30 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        debug {
+            storeFile rootProject.file('android.keystore')
+            storePassword 'android'
+            keyAlias 'debug'
+            keyPassword 'android_debug'
+        }
+        release {
+            storeFile rootProject.file('android.keystore')
+            storePassword 'android'
+            keyAlias 'release'
+            keyPassword 'android_release'
+        }
+    }
     buildTypes {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }

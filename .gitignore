@@ -41,3 +41,10 @@ project.properties
 ##Gradle-based build
 .gradle
 build/
+
+# Emacs
+>>>>>>> 3bdb618... chore: Ignore Emacs automatic files.
+*~
+.*~
+.\#*
+\#*
